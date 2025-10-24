@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Pc {
+  id         String    @id @default(uuid()) @map("id") @db.Uuid
+  name       String
+  ipAddress  String    @map("ip_address")
+  port       Int       @default(8080)
+  password   String
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt  DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  schedule   PcSchedule?
+
+  @@map("pcs")
+}
+
+model PcSchedule {
+  id         String    @id @default(uuid()) @map("id") @db.Uuid
+  pcId       String    @unique @map("pc_id") @db.Uuid
+  enabled    Boolean   @default(false)
+  startTime  String    @map("start_time")
+  endTime    String    @map("end_time")
+  createdAt  DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt  DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  pc         Pc        @relation(fields: [pcId], references: [id], onDelete: Cascade)
+
+  @@map("pc_schedules")
+}

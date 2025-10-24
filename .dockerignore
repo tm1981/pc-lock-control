@@ -1,0 +1,20 @@
+# Docker ignore file
+node_modules
+.next
+.git
+.gitignore
+Dockerfile
+Dockerfile.*
+README.md
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store
+.eslintcache
+.vscode
+*.local
+*.log
+**/*.swp
+**/*.swo
+# Optional: do NOT send .env to the build context if you pass build args instead
+# .env
