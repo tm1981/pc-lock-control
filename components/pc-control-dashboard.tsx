@@ -155,10 +155,7 @@ export function PcControlDashboard() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-semibold">Control Dashboard</h2>
-          <p className="text-muted-foreground">Monitor and control your remote PCs</p>
-        </div>
+        <div />
         <Button onClick={refreshAllStatuses} variant="outline">
           <RefreshCw className="w-4 h-4 mr-2" />
           Refresh All
