@@ -1,7 +1,4 @@
-import { PcManagement } from "@/components/pc-management"
-import { PcControlDashboard } from "@/components/pc-control-dashboard"
-import { ScheduleManagement } from "@/components/schedule-management"
-import { Separator } from "@/components/ui/separator"
+import PcsDashboard from "@/components/pc-dashboard"
 
 export default function Home() {
   return (
@@ -12,15 +9,7 @@ export default function Home() {
           <p className="text-muted-foreground mt-2">Manage and control your remote PCs from one central dashboard</p>
         </div>
 
-        <PcControlDashboard />
-
-        <Separator />
-
-        <ScheduleManagement />
-
-        <Separator />
-
-        <PcManagement />
+        <PcsDashboard />
       </div>
     </main>
   )

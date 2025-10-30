@@ -143,11 +143,6 @@ export function ScheduleManagement() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-semibold">Schedule Management</h2>
-        <p className="text-muted-foreground">Configure automatic lock/unlock schedules for your PCs</p>
-      </div>
-
       {pcsWithSchedules.length === 0 ? (
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-12">

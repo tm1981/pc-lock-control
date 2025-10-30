@@ -86,12 +86,7 @@ export function PcManagement() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-semibold">Your PCs</h2>
-          <p className="text-muted-foreground">
-            {pcs.length} PC{pcs.length !== 1 ? "s" : ""} configured
-          </p>
-        </div>
+        <div />
         <Button onClick={() => setAddDialogOpen(true)}>
           <Plus className="w-4 h-4 mr-2" />
           Add PC
